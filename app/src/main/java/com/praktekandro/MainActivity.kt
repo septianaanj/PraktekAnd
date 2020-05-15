@@ -32,10 +32,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         button2.setOnClickListener{
-            var username = "SEPTIANA"
-            val intent  = Intent(this@MainActivity, GameActivity::class.java)
-            intent.putExtra("username",username)
-            startActivity(intent)
+            var alert: AlertDialog.Builder = AlertDialog.Builder(this)
+            alert.setTitle("Username")
+            alert.setMessage("Hai")
+
+            alert.setPositiveButton("Yes"){dialog, which ->
+                var username = "SEPTIANA"
+                val intent  = Intent(this@MainActivity, GameActivity::class.java)
+                intent.putExtra("username",username)
+                startActivity(intent) 
+            }
+            
+            alert.setNegativeButton("No"){dialog, which ->
+                
+            }
+            alert.show()
         }
 
     }
