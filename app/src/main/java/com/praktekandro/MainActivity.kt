@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             alert.setPositiveButton("Yes"){dialog, which ->
                 var username = editUser.text.toString()
                 val intent  = Intent(this@MainActivity, GameActivity::class.java)
-                intent.putExtra("username",username)
+                intent.putExtra(GameActivity.EXTRA_USER,username)
                 startActivity(intent) 
             }
             

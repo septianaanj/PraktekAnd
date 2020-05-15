@@ -12,12 +12,17 @@ private const val GUNTING = 2
 private const val KERTAS = 3
 
 class GameActivity : AppCompatActivity() {
+
+    companion object{
+        const val EXTRA_USER = "username"
+    }
+
     var username:String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        username = intent.getStringExtra("username")
+        username = intent.getStringExtra(EXTRA_USER)
 
         var pilihanKomputer:Int
         var pilihanPlayer:Int
