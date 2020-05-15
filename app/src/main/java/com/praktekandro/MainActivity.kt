@@ -33,11 +33,13 @@ class MainActivity : AppCompatActivity() {
 
         button2.setOnClickListener{
             var alert: AlertDialog.Builder = AlertDialog.Builder(this)
+            val editUser = EditText(this)
             alert.setTitle("Username")
             alert.setMessage("Hai")
+            alert.setView(editUser)
 
             alert.setPositiveButton("Yes"){dialog, which ->
-                var username = "SEPTIANA"
+                var username = editUser.text.toString()
                 val intent  = Intent(this@MainActivity, GameActivity::class.java)
                 intent.putExtra("username",username)
                 startActivity(intent) 
