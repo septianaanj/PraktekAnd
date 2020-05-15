@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import android.app.AlertDialog
+import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -30,7 +32,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         button2.setOnClickListener{
+            var username = "SEPTIANA"
             val intent  = Intent(this@MainActivity, GameActivity::class.java)
+            intent.putExtra("username",username)
             startActivity(intent)
         }
 

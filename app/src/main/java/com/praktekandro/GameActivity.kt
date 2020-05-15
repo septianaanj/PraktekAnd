@@ -12,10 +12,12 @@ private const val GUNTING = 2
 private const val KERTAS = 3
 
 class GameActivity : AppCompatActivity() {
-
+    var username:String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
+
+        username = intent.getStringExtra("username")
 
         var pilihanKomputer:Int
         var pilihanPlayer:Int
@@ -69,11 +71,11 @@ class GameActivity : AppCompatActivity() {
         else if((pilihanPlayer == BATU && pilihanKomputer == KERTAS) ||
                 (pilihanPlayer == GUNTING && pilihanKomputer == BATU) ||
                 (pilihanPlayer == KERTAS && pilihanKomputer == GUNTING)) {
-            hasil = "YOU LOSE"
+            hasil = username + " LOSE"
             textHasil.setTextColor(Color.RED)
         }
         else {
-            hasil = "YOU WIN"
+            hasil = username + " WIN"
             textHasil.setTextColor(Color.GREEN)
         }
         return hasil
